@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+    <!--style-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <form action="#" class="calc-form">
+        <div class="text-field bold">
+            <span class="text-field-title">
+                Вес изделия
+            </span>
+            <label for="productWeight">
+                <input type="text" id="productWeight" class="porduct-weigth" placeholder="укажите вес в граммах">
+            </label>
+
+        </div>
+        <div class="text-field bold">
+            <span class="text-field-title">
+                Проба металла
+            </span>
+            <label for="metalQuality">
+                <select name="metalQuality" id="metalQuality" size="1" class="metal-quality">
+                    <option value="0">585 проба</option>
+                    <option value="1">750 проба</option>
+                    <option value="2">925 проба</option>
+                </select>
+            </label>
+
+        </div>
+        <div class="text-field">
+            <label for="switchButton" class="switch">
+                <input type="checkbox" id="switchButton" name="switchButton">
+                <span class="slider round"></span>
+
+            </label>
+            <span class="option-text">Камни и вставки</span>
+            <span class="text-field-description" id="content">
+                Окончательная оценочная<br>
+                стоимость залога может<br>
+                отличаться от указанной в расчете
+            </span>
+        </div>
+        <div class="text-field bold">
+             <span class="text-field-title">
+               Тарифный план
+                 <span class="info-icon tooltip ">
+                     <img src="image/info.png" alt="info">
+                     <span class="tooltiptext">lorem ipsum</span>
+                 </span>
+
+             </span>
+
+
+            <label for="tariffPlane">
+                <select name="tariffPlane" id="tariffPlane" class="tariff-plane" size="1">
+                    <option value="0">&#171;Простой&#187;</option>
+                    <option value="1">&#171;Базовый&#187;</option>
+                    <option value="2">&#171;Премиум&#187;</option>
+                </select>
+            </label>
+        </div>
+        <div class="text-field bold">
+             <span class="text-field-title">
+                 Ваш дисконтный статус
+            </span>
+            <label for="discountStatus">
+                <select name="discountStatus" id="discountStatus" size="1" class="discount-status">
+                    <option value="0">Без статуса</option>
+                    <option value="1">5%</option>
+                    <option value="2">15%</option>
+                </select>
+            </label>
+        </div>
+        <div class="text-field bold">
+            <span class="text-field-title">
+                Срок кредитования<br>до продления
+            </span>
+            <span class="range-slider">
+                 <input type="range" value="15" step="1" min="1" max="30">
+            </span>
+
+
+        </div>
+        <button class="calculate-credit bold">
+            Рассчитать кредит
+        </button>
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="lib/rangeSlider.js" defer></script>
+<script src="js/script.js"></script>
+</body>
+</html>

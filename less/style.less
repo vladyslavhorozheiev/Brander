@@ -1,0 +1,253 @@
+//BASE STYLE
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  appearance: none;
+  background: url("../image/arrow.png") no-repeat 95% 50%;
+}
+
+//VALUE
+@red: red;
+@lightgray: #bebebe;
+@selectWidth: 192px;
+@black: #000;
+
+//STYLE
+
+.container {
+  display: flex;
+  width: 1000px;
+  height: 750px;
+  padding: 100px 0;
+  margin: 100px auto;
+
+  //FORMS STYLE
+  .calc-form {
+    margin: 0 auto;
+    width: 600px;
+    flex-direction: column;
+
+    //ROW
+    .porduct-weigth {
+      border: none;
+      width: @selectWidth;
+      border-bottom: 1px solid @lightgray;
+      padding: 10px 0;
+    }
+    //ROW
+    .metal-quality {
+      .porduct-weigth;
+      align-self: center;
+    }
+    //ROW
+    .tariff-plane {
+      width: @selectWidth;
+      height: 40px;
+      border-radius: 34px;
+      padding-left: 20px;
+    }
+    //ROW
+    .discount-status {
+      .tariff-plane;
+    }
+  }
+}
+
+//TEXT-FIELD IN ROWS
+.text-field {
+  padding: 15px 0;
+  display: inline-flex;
+  align-items: center;
+  width: 415px;
+  &-title {
+    display: inline-flex;
+    width: 207px;
+  }
+  &-description {
+    display: inline-flex;
+    width: 198px;
+    color: @red;
+  }
+  .option-text {
+    padding-left: 10px !important;
+    padding-right: 25px !important;
+  }
+  #content {
+    transition: all 1.5s ease;
+  }
+}
+
+//SWITCH BUTTON
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 30px;
+  &:after {
+    content: "да";
+    color: #ffffff;
+    font-size: 10px;
+    position: absolute;
+    top: 25%;
+    left: 60%;
+  }
+  & input {
+    display: none;
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7f7f7f;
+  -webkit-transition: .4s;
+  transition: .4s;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 23px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+}
+
+input:checked + .slider {
+  background-color: #7f7f7f;
+  &:before {
+    -webkit-transform: translateX(23px);
+    -ms-transform: translateX(23px);
+    transform: translateX(23px);
+  }
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+//TOOLTIPE
+.info-icon {
+  padding-left: 10px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  & .tooltiptext {
+    visibility: hidden;
+    width: 60px;
+    color: @lightgray;
+    text-align: center;
+    border: 1px solid @lightgray;
+    border-radius: 6px;
+    position: absolute;
+    padding: 3px;
+    bottom: 95%;
+    left: 85%;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  &:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+//CALCULATE BUTTON
+.calculate-credit {
+  background-color: #fff;
+  border: 1px solid @red;
+  color: @red;
+  width: 242px;
+  height: 48px;
+  border-radius: 34px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+//RANGE SLIDER
+
+.range-slider {
+  width: 230px;
+  display: flex;
+  margin-left: -10px;
+}
+
+//for js script
+.rangeslider,
+.rangeslider__fill {
+  display: flex;
+  border-radius: 1px;
+}
+
+.rangeslider {
+  background: @lightgray;
+  position: relative;
+  &--horizontal {
+    height: 2px;
+    width: 100%;
+  }
+  &__handle {
+    background: white;
+    color: @black;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid @lightgray;
+    cursor: pointer;
+    display: inline-flex;
+    width: 100px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 22px;
+    &:after {
+      content: ">";
+      color: @black;
+      position: absolute;
+      right: 6%;
+    }
+    &:before {
+      content: "<";
+      color: @black;
+      position: absolute;
+      left: 6%;
+    }
+  }
+}
+
+.rangeslider--horizontal .rangeslider__handle {
+  top: -20px;
+  touch-action: pan-y;
+}
+
+
+
